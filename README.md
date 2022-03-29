@@ -1,1 +1,2 @@
-# SIH1
+# sih-project
+ Sih Hackathon and MADF project
