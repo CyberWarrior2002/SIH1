@@ -10,47 +10,36 @@
     <title>Payments</title>
 </head>
 <h1>Payments</h1>
-//Payment Script
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <form action="/action_page.php">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="John"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Doe"><br><br>
-    <label for="emailid">Email ID:</label><br>
-    <input type="text" id="emailid" name="emailid" value="john@gmail.com"><br>
-    <label for="numb">Number:</label><br>
-    <input type="text" id="num" name="num" value="9999999999"><br>
-<script>
-   // <input type="submit" value="Submit">
 <button id="rzp-button1">Pay</button>
-    var options = {
-        "key": "rzp_live_wSL6HlowOkPtIR", // Enter the Key ID generated from the Dashboard
-        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": "INR",
-        "name": "Unknown Variables",
-        "description": "Ticket Booking",
-        "image": "https://example.com/your_logo",
-        "order_id": "order_JCw7ys5LTU2ROk", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        "handler": function (response) {
-            alert(response.razorpay_payment_id);
-            alert(response.razorpay_order_id);
-            alert(response.razorpay_signature)
-        },      
-        "prefill": {
-            "name": fname,
-            "email": emailid,
-            "contact": num
-        },
-        "notes": {
-            "address": "Razorpay Corporate Office"
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
-    };
-    var rzp1 = new Razorpay(options);
-    rzp1.on('payment.failed', function (response) {
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_live_wSL6HlowOkPtIR", // Enter the Key ID generated from the Dashboard
+    "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Unknown Variables",
+    "description": "Ticket Booking",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_JCw7ys5LTU2ROk", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
         alert(response.error.code);
         alert(response.error.description);
         alert(response.error.source);
@@ -58,13 +47,12 @@
         alert(response.error.reason);
         alert(response.error.metadata.order_id);
         alert(response.error.metadata.payment_id);
-    });
-    document.getElementById('rzp-button1').onclick = function (e) {
-        rzp1.open();
-        e.preventDefault();
-    }
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
 </script>
-    </form>
 
 <body>
 
