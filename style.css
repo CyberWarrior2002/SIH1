@@ -83,3 +83,22 @@ body,.container,footer,nav{
     position: sticky;
     top: -1px;
 } */
+
+h1{
+    text-align: center;
+    letter-spacing: 0.05cm;
+}
+body{
+    background:linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+    color:darkblue;
+    background-color: rgb(64, 139, 111);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+button:hover{
+    color: aqua;
+}
