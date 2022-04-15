@@ -1,0 +1,36 @@
+h1 {
+    text-align: center;
+    letter-spacing: 0.05cm;
+}
+
+body {
+    background: linear-gradient(95.2deg, rgba(173, 252, 234, 1) 26.8%, rgba(192, 229, 246, 1) 64%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    font-family: 'roboto', sans-serif;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: lightgreen;
+}
+
+button {
+    background: none;
+    color: #ffa260;
+    border: 2px solid;
+    padding: 1em 2em;
+    font-size: 1em;
+    transition: 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+
+}
+
+button:hover {
+    border-color: #f1ff5c;
+    color: white;
+    box-shadow: 0, 0.5em, 0.5em, -0.4em #f1ff5c;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
